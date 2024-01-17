@@ -35,14 +35,14 @@ const TodoTask: React.FC<TTodoTaskProps> = ({
 
   const taskUpdate = useSelector((store: RootState) => store.updateTask);
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     if (valueTextArea === "") {
       alert("bạn chưa nhập công việc");
       e.preventDefault();
       return;
     }
     e.preventDefault();
-    e.target.reset();
+    e.currentTarget.reset();
 
     const arrTemp = {
       id: generateRandomId(8),

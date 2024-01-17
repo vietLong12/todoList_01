@@ -1,17 +1,11 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import s from "./regForm.module.css";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { checkLoginAction } from "../../redux/action";
+import { Link } from "react-router-dom";
 
 interface TLoginType {
   username?: string;
   password?: string;
   rePassword?: string;
-}
-interface TResetForm {
-  resetForm: () => void;
 }
 
 const LoginForm = () => {
@@ -20,9 +14,6 @@ const LoginForm = () => {
     password: "",
     rePassword: "",
   };
-
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const onSubmit = (values: TLoginType) => {
     console.log(
@@ -40,11 +31,16 @@ const LoginForm = () => {
     if (!values.password) {
       errors.password = "Vui lòng nhập mật khẩu";
     }
-    if (values.password.length < 4 || values.password.length > 8) {
+
+    if (
+      values.password?.length === undefined ||
+      values.password.length < 4 ||
+      values.password.length > 8
+    ) {
       errors.password = "Vui lòng nhập mật khẩu có độ dài từ 4 đến 8 kí tự!";
     }
-    if(values.rePassword !=  values.password) {
-      errors.rePassword = "Mật khẩu không khớp!"
+    if (values.rePassword != values.password) {
+      errors.rePassword = "Mật khẩu không khớp!";
     }
 
     return errors;

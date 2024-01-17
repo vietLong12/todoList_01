@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import s from "./content.module.css";
 import ToDoSearch from "../ToDoSearch/ToDoSearch";
 import TodoTask from "../TodoTask/TodoTask";
 import ToDoDone from "../ToDoDone/ToDoDone";

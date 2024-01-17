@@ -1,14 +1,12 @@
-import { TActionProps, TTaskProps } from "../../components/types";
-import { EDIT_TASK, UPDATE_TASK } from "../constant";
+import { TActionProps } from "../../components/types";
+import { EDIT_TASK } from "../constant";
 
 export default function appReducer(state = {}, action: TActionProps) {
   switch (action.type) {
     case EDIT_TASK: {
-      const clonedState = JSON.parse(JSON.stringify(state));
-      console.log("clonedState: ", action.payload);
+      // const clonedState = JSON.parse(JSON.stringify(state));
       return action.payload;
     }
-
 
     default:
       return state;

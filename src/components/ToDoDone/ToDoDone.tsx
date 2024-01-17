@@ -19,7 +19,7 @@ const ToDoDone = () => {
     dispatch(redoTaskAction(id));
   };
 
-  const listTask = useSelector((store) => store.listTask);
+  const listTask = useSelector((store : any) => store.listTask);
   return (
     <div className={s.todoDone}>
       <h1 className="fs-1">Todo Done</h1>

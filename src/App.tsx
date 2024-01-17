@@ -1,6 +1,6 @@
-import { Route, Router, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import LoginForm from "/src/components/LoginForm";
+import LoginForm from "../src/components/LoginForm";
 import PageLogin from "./components/PageLogin";
 import { useSelector } from "react-redux";
 import { TStateProps } from "./components/types";

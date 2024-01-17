@@ -1,5 +1,4 @@
 import PageLogin from "../components/PageLogin";
-import PageTrial from "../components/PageTrial";
 
 export const privateRouter = [
   {
@@ -7,9 +6,9 @@ export const privateRouter = [
     element: PageLogin,
   },
 ];
-export const publicRouter = [
-  {
-    path: "/",
-    element: PageTrial,
-  }
-];
+// export const publicRouter = [
+//   {
+//     path: "/",
+//     element: PageTrial,
+//   }
+// ];

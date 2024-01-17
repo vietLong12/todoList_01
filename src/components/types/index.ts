@@ -1,6 +1,6 @@
 export interface TActionProps {
   type: string;
-  payload: boolean | string | null | TTaskProps;
+  payload: TTaskProps | boolean | string | null;
 }
 
 export interface TStateProps {

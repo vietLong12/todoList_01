@@ -1,5 +1,4 @@
-import { TTaskProps } from "./../../components/types/index";
-import { TActionProps, TTaskProps } from "../../components/types";
+import { TActionProps, TTaskProps } from "components/types";
 import { sortByDate } from "../../utilities";
 import {
   ADD_TASK,
@@ -17,7 +16,7 @@ import {
 const data: TActionProps[] = JSON.parse(localStorage.getItem("data") as string);
 const initialState = data ? data : [];
 
-export default function appReducer(state = initialState, action: TActionProps) {
+export default function appReducer(state = initialState, action: any) {
   switch (action.type) {
     case ADD_TASK: {
       const clonedState = JSON.parse(JSON.stringify(state));
@@ -80,7 +79,8 @@ export default function appReducer(state = initialState, action: TActionProps) {
       return clonedState;
     }
     case DELETE_ALL: {
-      const filteredState = state.filter(
+      const clonedState = JSON.parse(JSON.stringify(state));
+      const filteredState = clonedState.filter(
         (task: TTaskProps) => !task.isCompleted
       );
       localStorage.setItem("data", JSON.stringify(state));
@@ -98,7 +98,6 @@ export default function appReducer(state = initialState, action: TActionProps) {
     }
     case UPDATE_TASK: {
       const clonedState = JSON.parse(JSON.stringify(state));
-      console.log("Update task::------", action.payload);
       for (let i = 0; i < clonedState.length; i++) {
         if (clonedState[i].id === action.payload.id) {
           clonedState[i].taskName = action.payload.taskName;

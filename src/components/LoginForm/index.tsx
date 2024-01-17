@@ -1,8 +1,8 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import s from "./loginForm.module.css";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { checkLoginAction } from "../../redux/action";
 
 interface TLoginType {
@@ -109,7 +109,7 @@ const LoginForm = () => {
                   id="togglePassword"
                   className="me-2"
                 />
-                <label htmlFor="togglePassword" style={{userSelect: "none"}}>
+                <label htmlFor="togglePassword" style={{ userSelect: "none" }}>
                   Hiện mật khẩu
                 </label>
               </div>

@@ -18,7 +18,6 @@ import {
   importantTaskAction,
   sortByDeadline,
   sortByImportant,
-  updateTaskAction,
 } from "../../redux/action";
 import { TTodoTaskProps } from "../TodoTask/TodoTask";
 
